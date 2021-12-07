@@ -43,3 +43,11 @@ img {
     from { transform: scale(0.8); }
     to { transform: scale(1.2); }
   }
+
+.button {
+margin-top: 40px;
+}
+
+#web {
+    display: contents;
+}

@@ -1,28 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="web">
-        <h1 class="title">HANNAH IS A FUCKING RETARD</h1>
-        <div class="pulse" onclick="myFunction()">
-            <img src="/Users/hannahsprovieri/Desktop/HANNAH-WEBSITE/IMG_2945.JPG"
-                alt="">
-        </div>
+      <h1 class="title">HANNAH IS SUCH A SLOTH RETARD</h1>
+      <div class="pulse" onclick="myFunction()">
+        <img
+          src="/Users/hannahsprovieri/Desktop/HANNAH-WEBSITE/IMG_2945.JPG"
+          alt=""
+        />
+      </div>
+      <button class="button" id='count' onclick="count()">cool lil button</button>
+      <div id="web"></div>
     </div>
 
     <script>
-        function myFunction() {
-          alert("YOU JUST CLICKED ON A RETARD WOOOOHOOOOO");
-        }
-        </script>
-</body>
+        const random = Math.floor(Math.random() * (24 - 1) + 1);
+      function myFunction() {
+        alert('YOU JUST CLICKED ON A RETARD WOOOOHOOOOO')
+      }
+      function count() {
+        const heading = document.createElement('h3')
+        heading.classList.add('counter-display')
 
+        const add = document.createElement('button')
+        add.innerHTML = '+'
+        add.classList.add('counter-plus')
+
+        document.getElementById('web').appendChild(heading)
+        document.getElementById('web').appendChild(add)
+        
+        let counterDisplayElem = document.querySelector('.counter-display')
+        let counterPlusElem = document.querySelector('.counter-plus')
+        let counter = 0
+        deleteDiv()
+
+        counterPlusElem.addEventListener('click', () => {
+          counter++
+          updateDisplay()
+        })
+        
+        function deleteDiv() {
+          const coolButton = document.getElementById("count");
+          if (!coolButton) return 
+          coolButton.remove()
+          counterDisplayElem.classList.add('button')
+        }
+
+        
+        function fun() {
+            const a = document.createElement('a')
+            var linkText = document.createTextNode("your welcome");
+            a.setAttribute("id", "boom");
+            a.appendChild(linkText);
+            a.title = "your welcome";
+            a.href = "https://lh3.googleusercontent.com/proxy/1frcuE9ljYOeR3AtLzk362US_bGJWtrxseWODM3jwN21rIpMCel7pI8tz6Bc21_giP_s6OwWcszPoEFlRwTVzbExSKocd3AoVSSf2Ko7HduF6oHR3iIwM7v76NpDe170mY1mhcn_GiIqwnqTgUmOTXstpfCJVOR7TCE";
+            a.target = "_blank"
+            document.getElementById('web').appendChild(a)
+            document.getElementById("boom").click();
+        }
+        
+        function updateDisplay() {
+            if (counter === random ) {
+                fun()
+                document.getElementById("boom").remove();
+            } else {
+                counterDisplayElem.innerHTML = `I love you this much times ${counter}`
+            }
+        }
+      }
+    </script>
+  </body>
 </html>
